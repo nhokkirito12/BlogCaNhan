@@ -1,0 +1,134 @@
+<!--
+ // WEBSITE: https://blog-ca-nhan.vercel.app/
+ // FACEBOOK: https://www.facebook.com/Ltadduc
+ // GITHUB: https://github.com/hjkduc
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>BlogCaNhan - 2280600721 - Le Tran Anh Duc</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick-theme.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.theme.default.min.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.about-author .img-fluid {
+			border-radius: 50%; width: 150px; height: 150px;
+			object-fit: cover; border: 4px solid #fff;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		}
+		.ti-github:before { content: "\e69b"; font-family: 'themify'; }
+	</style>
+</head>
+
+<body>
+	<header class="header-top bg-dark justify-content-between navigation-dark">
+		<nav class="navbar navbar-expand-lg navigation ">
+			<div class="container">
+				<a class="navbar-brand d-lg-none" href="index.html"><img src="images/logo-w.png" alt="" class="img-fluid"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="ti-menu"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul id="menu" class="menu navbar-nav">
+												<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Home
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="index.html">Home</a>
+								<a class="dropdown-item" href="index-2.html">Buổi 1</a>
+								<a class="dropdown-item" href="index-3.html">Buổi 2</a>
+								<a class="dropdown-item" href="index-4.html">Buổi 3</a>
+								<a class="dropdown-item" href="index-5.html">Buổi 4</a>
+								<a class="dropdown-item" href="index-6.html">Buổi 5</a>
+								<a class="dropdown-item" href="index-7.html">Buổi 6</a>
+								<a class="dropdown-item" href="index-8.html">Buổi 7</a>
+								<a class="dropdown-item" href="index-9.html">Buổi 8</a>
+							</div>
+						</li>
+						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					</ul>
+				</div>
+				<ul class="header-socials-2 text-right d-none d-lg-block mb-0">
+					<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+					<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="header-logo py-5"></div>
+
+	<section class="section-padding pt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<article class="post-grid mb-5">
+						<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">Buổi 8</span>
+						<h2 class="mb-1 mt-2 post-title"><a href="#">Kỹ thuật nâng cao: Multicast UDP và Java RMI</a></h2>
+						<div class="post-content mt-4">
+							<p>Trong bài học cuối cùng này, chúng ta sẽ khám phá hai kỹ thuật lập trình mạng nâng cao, giúp bạn giải quyết các mô hình giao tiếp phức tạp hơn so với mô hình Client-Server truyền thống.</p>
+
+							<h4 class="mt-4">1. Multicast UDP: Giao tiếp nhóm hiệu quả</h4>
+							<p>Multicast là một mô hình giao tiếp mà một máy gửi có thể gửi một gói tin duy nhất đến nhiều máy nhận cùng lúc (One-to-Many). Điều này khác với Unicast (One-to-One) và Broadcast (One-to-All).</p>
+							<ul>
+								<li>Địa chỉ Multicast: Gói tin được gửi đến một địa chỉ IP đặc biệt (từ `224.0.0.0` đến `239.255.255.255`).</li>
+								<li>Hoạt động: Các máy nhận phải chủ động "tham gia" (Join) vào nhóm Multicast bằng cách sử dụng lớp MulticastSocket trong Java.</li>
+								<li>Ứng dụng: Thích hợp cho các dịch vụ truyền phát thời gian thực, cập nhật thông tin chứng khoán hoặc các ứng dụng khám phá dịch vụ (Service Discovery) trong mạng cục bộ.</li>
+							</ul>
+							<p>Multicast tận dụng sự nhanh chóng của UDP nhưng giới hạn phạm vi người nhận, giúp giảm tải mạng hiệu quả.</p>
+
+							<h4 class="mt-4">2. Java RMI (Remote Method Invocation)</h4>
+							<p>RMI là một bước tiến lớn trong lập trình mạng vì nó giúp trừu tượng hóa hoàn toàn tầng mạng và Socket. RMI cho phép một đối tượng Client gọi một phương thức của đối tượng đang nằm trên máy Server từ xa như thể nó là một đối tượng cục bộ.</p>
+							<p>Các thành phần chính của RMI:</p>
+							<ul>
+								<li>Remote Interface: Định nghĩa các phương thức có thể được gọi từ xa (phải kế thừa từ `java.rmi.Remote`).</li>
+								<li>Server (Remote Object): Triển khai giao diện Remote và đăng ký nó với dịch vụ định danh (`Registry`).</li>
+								<li>Client: Tìm đối tượng Remote trong Registry, và gọi các phương thức như gọi hàm thông thường.</li>
+							</ul>
+							<p>RMI được xây dựng dựa trên các cơ chế mạng như Socket (tự động) nhưng giúp lập trình viên tập trung vào logic nghiệp vụ hơn là chi tiết mạng. Đây là nền tảng cho việc xây dựng các hệ thống phân tán chặt chẽ trong Java.</p>
+
+							<blockquote class="blockquote">
+								<p>Việc kết hợp các mô hình giao tiếp này mở ra cánh cửa để xây dựng những ứng dụng mạng phức tạp, có khả năng mở rộng cao và hiệu suất vượt trội.</p>
+							</blockquote>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<div class="sidebar-widget about mb-5 text-center p-3">
+						<div class="about-author">
+							<img src="images/AnhCaNhan.png" alt="Lê Trần Anh Đức" class="img-fluid"> 
+						</div>
+						<h4 class="mb-0 mt-4">Lê Trần Anh Đức</h4>
+						<p>2280600721</p>
+						<p>Xin chào, tôi là Đức. Đây là không gian cá nhân của tôi để chia sẻ về lập trình mạng, an ninh mạng và những kiến thức công nghệ thú vị khác.</p>
+						<h5 class="mt-5 mb-3">FOLLOW ME</h5>
+						<div class="social-icon">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="plugins/jquery/jquery.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>

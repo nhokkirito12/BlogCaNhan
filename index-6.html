@@ -1,0 +1,188 @@
+<!--
+ // WEBSITE: https://blog-ca-nhan.vercel.app/
+ // FACEBOOK: https://www.facebook.com/Ltadduc
+ // GITHUB: https://github.com/hjkduc
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>BlogCaNhan - 2280600721 - Le Tran Anh Duc</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick-theme.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.theme.default.min.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.about-author .img-fluid {
+			border-radius: 50%; width: 150px; height: 150px;
+			object-fit: cover; border: 4px solid #fff;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		}
+		.ti-github:before { content: "\e69b"; font-family: 'themify'; }
+	</style>
+</head>
+
+<body>
+	<header class="header-top bg-dark justify-content-between navigation-dark">
+		<nav class="navbar navbar-expand-lg navigation ">
+			<div class="container">
+				<a class="navbar-brand d-lg-none" href="index.html"><img src="images/logo-w.png" alt="" class="img-fluid"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="ti-menu"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul id="menu" class="menu navbar-nav">
+												<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Home
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="index.html">Home</a>
+								<a class="dropdown-item" href="index-2.html">Buổi 1</a>
+								<a class="dropdown-item" href="index-3.html">Buổi 2</a>
+								<a class="dropdown-item" href="index-4.html">Buổi 3</a>
+								<a class="dropdown-item" href="index-5.html">Buổi 4</a>
+								<a class="dropdown-item" href="index-6.html">Buổi 5</a>
+								<a class="dropdown-item" href="index-7.html">Buổi 6</a>
+								<a class="dropdown-item" href="index-8.html">Buổi 7</a>
+								<a class="dropdown-item" href="index-9.html">Buổi 8</a>
+							</div>
+						</li>
+						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					</ul>
+				</div>
+				<ul class="header-socials-2 text-right d-none d-lg-block mb-0">
+					<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+					<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="header-logo py-5"></div>
+
+	<section class="section-padding pt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<article class="post-grid mb-5">
+						<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">Buổi 5</span>
+						<h2 class="mb-1 mt-2 post-title"><a href="#">Lập trình Socket TCP: Xây dựng mô hình Client-Server tin cậy</a></h2>
+						<div class="post-content mt-4">
+							<p>Giao thức TCP (Transmission Control Protocol) là xương sống của các ứng dụng mạng cần sự chính xác tuyệt đối. TCP đảm bảo rằng mọi gói tin được gửi đi đều đến đích theo đúng thứ tự, không bị mất, không bị trùng lặp. Đây là lý do TCP được gọi là giao thức hướng kết nối và tin cậy.</p>
+							
+							<h4 class="mt-4">1. Quy trình kết nối và ngắt kết nối TCP</h4>
+							<p>Kết nối TCP được thiết lập thông qua quy trình "Bắt tay ba bước" (Three-Way Handshake), và ngắt kết nối bằng "Bắt tay bốn bước" (Four-Way Handshake). Sự phức tạp này nhằm đảm bảo tính toàn vẹn của dữ liệu:</p>
+							<ul>
+								<li>Khởi tạo (`ServerSocket`): Server khởi tạo `ServerSocket` để lắng nghe tại một Port cụ thể (trạng thái LISTENING).</li>
+								<li>Kết nối (`Socket`): Client tạo `Socket` để gửi yêu cầu SYN đến Server.</li>
+								<li>Chấp nhận (`accept()`): Server chấp nhận kết nối, tạo ra một `Socket` mới cho phiên giao tiếp này (kết nối đã được thiết lập).</li>
+							</ul>
+
+							<h4 class="mt-4">2. Các lớp Java cho Socket TCP</h4>
+							<p>Lập trình TCP trong Java chỉ cần hai lớp chính trong gói `java.net`:</p>
+							<ul>
+								<li>`ServerSocket` (Phía Server): Được sử dụng để chờ đợi và lắng nghe các yêu cầu kết nối từ Client. Phương thức quan trọng nhất là `accept()`, nó khóa luồng cho đến khi có Client kết nối thành công.</li>
+								<li>`Socket` (Phía Client và Phiên giao tiếp trên Server): Được sử dụng bởi Client để gửi yêu cầu kết nối, và được Server tạo ra sau khi chấp nhận Client. Đây là nơi lấy `InputStream` và `OutputStream` để trao đổi dữ liệu.</li>
+							</ul>
+
+							<h4 class="mt-4">3. Code chi tiết: Thiết lập Client và Server</h4>
+							<p>Mô hình Server đơn giản sẽ lắng nghe và trả lời một Client:</p>
+							<p>Server.java: Lớp lắng nghe</p>
+							<pre><code>
+// Server.java
+import java.net.*;
+import java.io.*;
+public class TCPServer {
+    public static void main(String[] args) throws IOException {
+        int port = 6789;
+        ServerSocket welcomeSocket = new ServerSocket(port);
+        System.out.println("Server listening on port " + port + "...");
+        
+        Socket connectionSocket = welcomeSocket.accept(); // Chờ Client
+        System.out.println("Client connected: " + connectionSocket.getInetAddress());
+
+        // Lấy luồng nhập/xuất để trao đổi dữ liệu
+        BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+        PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream(), true);
+
+        String clientSentence = inFromClient.readLine();
+        System.out.println("RECEIVED: " + clientSentence);
+        outToClient.println("Server acknowledges: " + clientSentence.toUpperCase());
+
+        connectionSocket.close();
+        welcomeSocket.close();
+    }
+}
+        </code></pre>
+							<p>Client.java: Lớp yêu cầu kết nối</p>
+							<pre><code>
+// Client.java
+import java.net.*;
+import java.io.*;
+public class TCPClient {
+    public static void main(String[] args) throws IOException {
+        String serverHost = "localhost";
+        int port = 6789;
+        
+        // Gửi yêu cầu kết nối
+        Socket clientSocket = new Socket(serverHost, port);
+        
+        // Lấy luồng nhập/xuất để trao đổi dữ liệu
+        PrintWriter outToServer = new PrintWriter(clientSocket.getOutputStream(), true);
+        BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
+        String message = "Hello Server from TCP Client!";
+        outToServer.println(message);
+
+        String modifiedSentence = inFromServer.readLine();
+        System.out.println("FROM SERVER: " + modifiedSentence);
+        
+        clientSocket.close();
+    }
+}
+        </code></pre>
+
+							<blockquote class="blockquote">
+								<p>TCP là sự lựa chọn mặc định khi sự toàn vẹn và thứ tự dữ liệu là tuyệt đối quan trọng (ví dụ: giao dịch ngân hàng, truyền file, HTTP).</p>
+							</blockquote>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<div class="sidebar-widget about mb-5 text-center p-3">
+						<div class="about-author">
+							<img src="images/AnhCaNhan.png" alt="Lê Trần Anh Đức" class="img-fluid"> 
+						</div>
+						<h4 class="mb-0 mt-4">Lê Trần Anh Đức</h4>
+						<p>2280600721</p>
+						<p>Xin chào, tôi là Đức. Đây là không gian cá nhân của tôi để chia sẻ về lập trình mạng, an ninh mạng và những kiến thức công nghệ thú vị khác.</p>
+						<h5 class="mt-5 mb-3">FOLLOW ME</h5>
+						<div class="social-icon">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="plugins/jquery/jquery.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>

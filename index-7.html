@@ -1,0 +1,191 @@
+<!--
+ // WEBSITE: https://blog-ca-nhan.vercel.app/
+ // FACEBOOK: https://www.facebook.com/Ltadduc
+ // GITHUB: https://github.com/hjkduc
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>BlogCaNhan - 2280600721 - Le Tran Anh Duc</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick-theme.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.theme.default.min.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.about-author .img-fluid {
+			border-radius: 50%; width: 150px; height: 150px;
+			object-fit: cover; border: 4px solid #fff;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		}
+		.ti-github:before { content: "\e69b"; font-family: 'themify'; }
+	</style>
+</head>
+
+<body>
+	<header class="header-top bg-dark justify-content-between navigation-dark">
+		<nav class="navbar navbar-expand-lg navigation ">
+			<div class="container">
+				<a class="navbar-brand d-lg-none" href="index.html"><img src="images/logo-w.png" alt="" class="img-fluid"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="ti-menu"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul id="menu" class="menu navbar-nav">
+												<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Home
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="index.html">Home</a>
+								<a class="dropdown-item" href="index-2.html">Buổi 1</a>
+								<a class="dropdown-item" href="index-3.html">Buổi 2</a>
+								<a class="dropdown-item" href="index-4.html">Buổi 3</a>
+								<a class="dropdown-item" href="index-5.html">Buổi 4</a>
+								<a class="dropdown-item" href="index-6.html">Buổi 5</a>
+								<a class="dropdown-item" href="index-7.html">Buổi 6</a>
+								<a class="dropdown-item" href="index-8.html">Buổi 7</a>
+								<a class="dropdown-item" href="index-9.html">Buổi 8</a>
+							</div>
+						</li>
+						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					</ul>
+				</div>
+				<ul class="header-socials-2 text-right d-none d-lg-block mb-0">
+					<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+					<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="header-logo py-5"></div>
+
+	<section class="section-padding pt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<article class="post-grid mb-5">
+						<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">Buổi 6</span>
+						<h2 class="mb-1 mt-2 post-title"><a href="#">Lập trình Socket UDP: Khi tốc độ là ưu tiên hàng đầu</a></h2>
+						<div class="post-content mt-4">
+							<p>Giao thức UDP (User Datagram Protocol) hoàn toàn trái ngược với TCP. UDP là một giao thức phi kết nối (connectionless) và không đáng tin cậy. Nó hoạt động theo triết lý "gửi và quên" (fire and forget). Khi bạn gửi một gói tin UDP (Datagram), bạn không biết liệu nó có đến đích hay không, có bị lặp lại hay đến sai thứ tự hay không.</p>
+
+							<h4 class="mt-4">1. So sánh TCP và UDP: Quyết định thiết kế</h4>
+							<p>Việc lựa chọn giữa TCP và UDP là một quyết định thiết kế quan trọng, dựa trên sự cân bằng giữa tốc độ và độ tin cậy:</p>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Đặc điểm</th>
+										<th>TCP (Transmission Control Protocol)</th>
+										<th>UDP (User Datagram Protocol)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mô hình</td>
+										<td>Hướng kết nối (Cần bắt tay 3 bước)</td>
+										<td>Phi kết nối (Không cần bắt tay)</td>
+									</tr>
+									<tr>
+										<td>Độ tin cậy</td>
+										<td>Cao (Đảm bảo dữ liệu đến, không mất, đúng thứ tự)</td>
+										<td>Thấp (Không đảm bảo)</td>
+									</tr>
+									<tr>
+										<td>Tốc độ</td>
+										<td>Chậm hơn (Do cần ACK và kiểm soát luồng)</td>
+										<td>Nhanh hơn (Ít overhead)</td>
+									</tr>
+									<tr>
+										<td>Ứng dụng</td>
+										<td>HTTP, FTP, Email (cần chính xác)</td>
+										<td>Game online, Video/Voice Streaming, DNS (cần tốc độ)</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<h4 class="mt-4">2. Các lớp Java cho Socket UDP</h4>
+							<p>Lập trình UDP trong Java xoay quanh hai lớp chính:</p>
+							<ul>
+								<li>`DatagramSocket`: Là Socket được sử dụng để gửi và nhận các gói tin Datagram. Nó không cần thiết lập kết nối.</li>
+								<li>`DatagramPacket`: Là gói tin thực tế được gửi qua mạng. Mỗi gói tin chứa dữ liệu (byte array), địa chỉ IP đích, và Port đích.</li>
+							</ul>
+
+							<h4 class="mt-4">3. Code chi tiết: Gửi và nhận gói tin</h4>
+							<p>Server.java (Receiver):</p>
+							<pre><code>
+// UDPServer.java
+import java.net.*;
+public class UDPServer {
+    public static void main(String[] args) throws Exception {
+        DatagramSocket serverSocket = new DatagramSocket(9876);
+        System.out.println("UDP Server is running...");
+        byte[] receiveData = new byte[1024];
+        while(true) {
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            serverSocket.receive(receivePacket);
+            String sentence = new String(receivePacket.getData());
+            System.out.println("RECEIVED: " + sentence);
+        }
+    }
+}
+							</code></pre>
+							<p>Client.java (Sender):</p>
+							<pre><code>
+// UDPClient.java
+import java.net.*;
+public class UDPClient {
+    public static void main(String[] args) throws Exception {
+        DatagramSocket clientSocket = new DatagramSocket();
+        InetAddress IPAddress = InetAddress.getByName("localhost");
+        byte[] sendData = "Hello from UDP Client!".getBytes();
+        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+        clientSocket.send(sendPacket);
+        clientSocket.close();
+    }
+}
+							</code></pre>
+
+							<blockquote class="blockquote">
+								<p>UDP là minh chứng cho việc không có giải pháp nào tốt nhất cho mọi vấn đề. Sự đánh đổi giữa tốc độ và độ tin cậy là một quyết định thiết kế quan trọng.</p>
+							</blockquote>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<div class="sidebar-widget about mb-5 text-center p-3">
+						<div class="about-author">
+							<img src="images/AnhCaNhan.png" alt="Lê Trần Anh Đức" class="img-fluid"> 
+						</div>
+						<h4 class="mb-0 mt-4">Lê Trần Anh Đức</h4>
+						<p>2280600721</p>
+						<p>Xin chào, tôi là Đức. Đây là không gian cá nhân của tôi để chia sẻ về lập trình mạng, an ninh mạng và những kiến thức công nghệ thú vị khác.</p>
+						<h5 class="mt-5 mb-3">FOLLOW ME</h5>
+						<div class="social-icon">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="plugins/jquery/jquery.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>

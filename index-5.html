@@ -1,0 +1,176 @@
+<!--
+ // WEBSITE: https://blog-ca-nhan.vercel.app/
+ // FACEBOOK: https://www.facebook.com/Ltadduc
+ // GITHUB: https://github.com/hjkduc
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>BlogCaNhan - 2280600721 - Le Tran Anh Duc</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick-theme.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="plugins/owl-carousel/owl.theme.default.min.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.about-author .img-fluid {
+			border-radius: 50%; width: 150px; height: 150px;
+			object-fit: cover; border: 4px solid #fff;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		}
+		.ti-github:before { content: "\e69b"; font-family: 'themify'; }
+	</style>
+</head>
+
+<body>
+	<header class="header-top bg-dark justify-content-between navigation-dark">
+		<nav class="navbar navbar-expand-lg navigation ">
+			<div class="container">
+				<a class="navbar-brand d-lg-none" href="index.html"><img src="images/logo-w.png" alt="" class="img-fluid"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="ti-menu"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul id="menu" class="menu navbar-nav">
+												<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Home
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="index.html">Home</a>
+								<a class="dropdown-item" href="index-2.html">Buổi 1</a>
+								<a class="dropdown-item" href="index-3.html">Buổi 2</a>
+								<a class="dropdown-item" href="index-4.html">Buổi 3</a>
+								<a class="dropdown-item" href="index-5.html">Buổi 4</a>
+								<a class="dropdown-item" href="index-6.html">Buổi 5</a>
+								<a class="dropdown-item" href="index-7.html">Buổi 6</a>
+								<a class="dropdown-item" href="index-8.html">Buổi 7</a>
+								<a class="dropdown-item" href="index-9.html">Buổi 8</a>
+							</div>
+						</li>
+						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					</ul>
+				</div>
+				<ul class="header-socials-2 text-right d-none d-lg-block mb-0">
+					<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+					<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="header-logo py-5"></div>
+
+	<section class="section-padding pt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<article class="post-grid mb-5">
+						<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">Buổi 4</span>
+						<h2 class="mb-1 mt-2 post-title"><a href="#">Làm việc với địa chỉ mạng: Chi tiết về lớp InetAddress</a></h2>
+						<div class="post-content mt-4">
+							<p>Trước khi bất kỳ kết nối mạng nào được thiết lập, ứng dụng của bạn phải giải quyết được câu hỏi: "Mình đang nói chuyện với ai?" Câu trả lời nằm ở lớp `java.net.InetAddress`. Lớp này đóng vai trò là đại diện lập trình cho cả địa chỉ IP (cục bộ và từ xa) và tên miền (hostname).</p>
+
+							<h4 class="mt-4">1. Cơ chế hoạt động: Phân giải DNS</h4>
+							<p>Khi bạn gọi `InetAddress.getByName("google.com")`, Java sẽ không chỉ tìm kiếm IP mà còn thực hiện quy trình Phân giải Tên miền (DNS Resolution). Quá trình này giúp chuyển đổi một tên miền dễ nhớ thành địa chỉ IP số học mà mạng máy tính thực sự sử dụng để định tuyến gói tin.</p>
+							<p>Điều quan trọng là lớp `InetAddress` cache (lưu trữ tạm thời) kết quả phân giải DNS. Điều này giúp tăng tốc độ truy vấn liên tiếp đến cùng một tên miền.</p>
+
+							<h4 class="mt-4">2. Các phương thức tĩnh quan trọng</h4>
+							<p>Vì `InetAddress` không có constructor công khai, bạn phải sử dụng các phương thức tĩnh để khởi tạo đối tượng:</p>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Phương thức</th>
+										<th>Chức năng</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>getByName(String host)</code></td>
+										<td>Phân giải tên miền/chuỗi IP thành đối tượng `InetAddress`. Nếu tên miền không tồn tại, sẽ ném ra `UnknownHostException`.</td>
+									</tr>
+									<tr>
+										<td><code>getLocalHost()</code></td>
+										<td>Trả về đối tượng `InetAddress` của máy tính đang chạy chương trình.</td>
+									</tr>
+									<tr>
+										<td><code>getAllByName(String host)</code></td>
+										<td>Trả về một mảng `InetAddress` nếu tên miền đó trỏ tới nhiều máy chủ (thường dùng cho cân bằng tải).</td>
+									</tr>
+									<tr>
+										<td><code>getHostAddress()</code></td>
+										<td>Trả về chuỗi địa chỉ IP (ví dụ: `172.217.167.142`).</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<h4 class="mt-4">3. Code minh họa chuyên sâu</h4>
+							<p>Ví dụ dưới đây minh họa cách lấy tất cả các địa chỉ IP liên quan đến một tên miền lớn (như Facebook) và kiểm tra xem một host có thể truy cập được không:</p>
+							<pre><code class="language-java">
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class AdvancedInetAddress {
+    public static void main(String[] args) {
+        try {
+            // Lấy tất cả các IP cho một host
+            InetAddress[] addresses = InetAddress.getAllByName("facebook.com");
+            System.out.println("--- IP Addresses for Facebook ---");
+            for (InetAddress address : addresses) {
+                System.out.println("-> IP: " + address.getHostAddress());
+                // Kiểm tra khả năng truy cập (Ping cơ bản)
+                if (address.isReachable(5000)) { 
+                    System.out.println("   (Reachable within 5 seconds)");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+							</code></pre>
+
+							<blockquote class="blockquote">
+								<p>Lớp <code>InetAddress</code> là bộ phận phiên dịch của Java, chuyển đổi ngôn ngữ của con người (tên miền) sang ngôn ngữ của máy tính (địa chỉ IP) để giao tiếp mạng có thể diễn ra.</p>
+							</blockquote>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<div class="sidebar-widget about mb-5 text-center p-3">
+						<div class="about-author">
+							<img src="images/AnhCaNhan.png" alt="Lê Trần Anh Đức" class="img-fluid"> 
+						</div>
+						<h4 class="mb-0 mt-4">Lê Trần Anh Đức</h4>
+						<p>2280600721</p>
+						<p>Xin chào, tôi là Đức. Đây là không gian cá nhân của tôi để chia sẻ về lập trình mạng, an ninh mạng và những kiến thức công nghệ thú vị khác.</p>
+						<h5 class="mt-5 mb-3">FOLLOW ME</h5>
+						<div class="social-icon">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://www.facebook.com/Ltadduc" target="_blank"><i class="ti-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/hjkduc" target="_blank"><i class="ti-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="plugins/jquery/jquery.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
