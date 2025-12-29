@@ -1,8 +1,8 @@
 /**
 <!--
- // WEBSITE: https://blog-ca-nhan.vercel.app/
- // FACEBOOK: https://www.facebook.com/Ltadduc
- // GITHUB: https://github.com/hjkduc
+ // WEBSITE: https://blog-ca-nhan-pi.vercel.app/
+ // FACEBOOK: https://www.facebook.com/Dangneeeeee
+ // GITHUB: https://github.com/nhokkirito12
 -->
  */
 
